@@ -1,51 +1,53 @@
+<!DOCTYPE html>
 <html>
-	<title>CALCULATOR</title>
-	<style>
-	input{
-	background-color:rgb(12, 12, 12);
-	width:100%;
-	border:0;
-	color:white;
-	}
-	</style>
-	<div align="center">
-	<h2>Calculator</h2>
-	<body>
-		<form name="calculate">
-			<table>
-				<tr>
-					<td colspan="4">  <input type="text" name="get"></td> 
-				</tr>
-				
-				<tr>
-					<td> <input type="button" value="1" onclick="calculate.get.value +='1'"></td>
-					<td> <input type="button" value="2" onclick="calculate.get.value +='2'"></td>
-					<td> <input type="button" value="3" onclick="calculate.get.value +='3'"></td>
-					<td> <input type="button" value="+" onclick="calculate.get.value +='+'"></td>
-				</tr>
-				
-				<tr>
-					<td> <input type="button" value="4" onclick="calculate.get.value +='4'"></td>
-					<td> <input type="button" value="5" onclick="calculate.get.value +='5'"></td>
-					<td> <input type="button" value="6" onclick="calculate.get.value +='6'"></td>
-					<td> <input type="button" value="-" onclick="calculate.get.value +='-'"></td>
-				</tr>
-				
-				<tr>
-					<td> <input type="button" value="7" onclick="calculate.get.value +='7'"></td>
-					<td> <input type="button" value="8" onclick="calculate.get.value +='8'"></td>
-					<td> <input type="button" value="9" onclick="calculate.get.value +='9'"></td>
-					<td> <input type="button" value="*" onclick="calculate.get.value +='*'"></td>
-				</tr>
-				
-				<tr>
-					<td> <input type="reset" value="c" ></td>
-					<td> <input type="button" value="0" onclick="calculate.get.value +='0'"></td>
-					<td> <input type="button" value="=" onclick="calculate.get.value =eval(calculate.get.value)"></td>
-					<td> <input type="button" value="/" onclick="calculate.get.value +='/'"></td>
-				</tr>
-			</table>
-		</form>
-		</div>
-	</body>
+
+<head>
+    <meta charset="utf-8" />
+    <title>1b Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="1.css" />
+</head>
+
+<body>
+    <h1>Simple Calculator</h1>
+    <table border="1">
+        <!-- The calculator display screen-->
+        <tr>
+            <td colspan="5">
+                <input type="text" id="result" value="0" />
+            </td>
+        </tr>
+
+        <!-- All the calculator keys -->
+        <tr>
+            <td><input type="button" value="7" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="8" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="9" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="+" onclick="insert_operator('add')"/></td>
+            <td><input type="button" value="-" onclick="insert_operator('subtract')"/></td>
+        </tr
+        <tr>
+            <td><input type="button" value="4" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="5" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="6" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="*" onclick="insert_operator('multiply')"/></td>
+            <td><input type="button" value="/" onclick="insert_operator('divide')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="2" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="3" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="0" onclick="insert_operand(this.value)"/></td>
+            <td><input type="button" value="=" onclick="insert_operator('equals')"/></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <input type="button" width="100%" value="clear" onclick="reset()"/>
+            </td>
+        </tr>
+    </table>
+
+    <script src="1.js"></script>
+
+</body>
+
 </html>
